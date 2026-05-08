@@ -49,7 +49,7 @@ tailwind.config = {
 <header class="fixed top-0 w-full z-50 bg-page-bg/90 backdrop-blur-md border-b border-charcoal/10 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-5 flex justify-between items-center relative">
         <!-- Mobile Menu Icon -->
-        <button id="mobile-menu-btn" class="md:hidden text-charcoal hover:text-sage-green transition-colors duration-300 z-50 p-2 -ml-2">
+        <button id="mobile-menu-btn" class="md:hidden text-charcoal hover:text-sage-green transition-colors duration-300 relative z-[60] p-2 -ml-2">
             <span class="material-symbols-outlined text-3xl">menu</span>
         </button>
         
@@ -84,16 +84,17 @@ tailwind.config = {
         </div>
     </div>
 
-    <!-- Mobile Navigation Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-page-bg z-40 transform -translate-y-full transition-transform duration-500 flex flex-col items-center justify-center gap-8 md:hidden">
-        <a href="https://opificiocalabria.com/filosofia/" class="mobile-link text-lg tracking-widest-xl uppercase hover:text-sage-dark transition-colors font-medium">Filosofia</a>
-        <a href="https://opificiocalabria.com/frutti-pregiati/" class="mobile-link text-lg tracking-widest-xl uppercase hover:text-sage-dark transition-colors font-medium">I Frutti</a>
-        <a href="https://opificiocalabria.com/shop/" class="mobile-link text-lg tracking-widest-xl uppercase hover:text-sage-dark transition-colors font-medium">Shop</a>
-        <a href="https://opificiocalabria.com/my-account/" class="mobile-link text-lg tracking-widest-xl uppercase hover:text-sage-dark transition-colors font-medium">Account</a>
-        <div class="w-12 h-[1px] bg-sage-dark my-4"></div>
-        <a href="https://opificiocalabria.com/" class="mobile-link text-sm tracking-widest-xl uppercase text-sage-dark font-bold">Sito Ufficiale</a>
-    </div>
 </header>
+
+<!-- Mobile Navigation Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-page-bg z-[55] transform -translate-y-full transition-transform duration-500 flex flex-col items-center justify-center gap-8 md:hidden">
+    <a href="https://opificiocalabria.com/filosofia/" class="mobile-link text-lg tracking-widest-xl uppercase hover:text-sage-dark transition-colors font-medium">Filosofia</a>
+    <a href="https://opificiocalabria.com/frutti-pregiati/" class="mobile-link text-lg tracking-widest-xl uppercase hover:text-sage-dark transition-colors font-medium">I Frutti</a>
+    <a href="https://opificiocalabria.com/shop/" class="mobile-link text-lg tracking-widest-xl uppercase hover:text-sage-dark transition-colors font-medium">Shop</a>
+    <a href="https://opificiocalabria.com/my-account/" class="mobile-link text-lg tracking-widest-xl uppercase hover:text-sage-dark transition-colors font-medium">Account</a>
+    <div class="w-12 h-[1px] bg-sage-dark my-4"></div>
+    <a href="https://opificiocalabria.com/" class="mobile-link text-sm tracking-widest-xl uppercase text-sage-dark font-bold">Sito Ufficiale</a>
+</div>
 
 <main class="flex-grow pt-16 md:pt-0">
     <!-- Hero Section -->
