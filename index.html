@@ -47,10 +47,10 @@ tailwind.config = {
 
 <!-- Navigation -->
 <header class="fixed top-0 w-full z-50 bg-page-bg/90 backdrop-blur-md border-b border-charcoal/10 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-5 flex justify-between items-center relative">
         <!-- Mobile Menu Icon -->
-        <button class="md:hidden text-charcoal hover:text-sage-green transition-colors duration-300">
-            <span class="material-symbols-outlined text-2xl">menu</span>
+        <button id="mobile-menu-btn" class="md:hidden text-charcoal hover:text-sage-green transition-colors duration-300 z-50 p-2 -ml-2">
+            <span class="material-symbols-outlined text-3xl">menu</span>
         </button>
         
         <!-- Desktop Nav Left -->
@@ -60,8 +60,8 @@ tailwind.config = {
         </nav>
 
         <!-- Logo -->
-        <div class="text-center flex-none">
-            <a href="https://opificiocalabria.com/" class="font-heading text-2xl md:text-3xl text-charcoal tracking-widest-2xl uppercase whitespace-nowrap hover:text-sage-dark transition-colors">
+        <div class="text-center flex-none absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
+            <a href="https://opificiocalabria.com/" class="font-heading text-xl md:text-3xl text-charcoal tracking-widest-2xl uppercase whitespace-nowrap hover:text-sage-dark transition-colors">
                 Opificio Calabria
             </a>
         </div>
@@ -73,49 +73,59 @@ tailwind.config = {
         </nav>
 
         <!-- Cart/Account Icons -->
-        <div class="flex gap-4 items-center md:ml-8">
+        <div class="flex gap-3 md:gap-4 items-center flex-1 justify-end md:ml-8">
             <a href="https://opificiocalabria.com/my-account/" class="hidden md:block text-charcoal hover:text-sage-green transition-colors duration-300">
                 <span class="material-symbols-outlined text-2xl">person</span>
             </a>
-            <a href="https://opificiocalabria.com/cart/" class="text-charcoal hover:text-sage-green transition-colors duration-300 relative inline-block">
-                <span class="material-symbols-outlined text-2xl">shopping_bag</span>
-                <span class="absolute -top-1 -right-1 bg-sage-dark text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+            <a href="https://opificiocalabria.com/cart/" class="text-charcoal hover:text-sage-green transition-colors duration-300 relative inline-block p-1">
+                <span class="material-symbols-outlined text-2xl md:text-2xl">shopping_bag</span>
+                <span class="absolute top-0 right-0 bg-sage-dark text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
             </a>
         </div>
     </div>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-page-bg z-40 transform -translate-y-full transition-transform duration-500 flex flex-col items-center justify-center gap-8 md:hidden">
+        <a href="https://opificiocalabria.com/filosofia/" class="mobile-link text-lg tracking-widest-xl uppercase hover:text-sage-dark transition-colors font-medium">Filosofia</a>
+        <a href="https://opificiocalabria.com/frutti-pregiati/" class="mobile-link text-lg tracking-widest-xl uppercase hover:text-sage-dark transition-colors font-medium">I Frutti</a>
+        <a href="https://opificiocalabria.com/shop/" class="mobile-link text-lg tracking-widest-xl uppercase hover:text-sage-dark transition-colors font-medium">Shop</a>
+        <a href="https://opificiocalabria.com/my-account/" class="mobile-link text-lg tracking-widest-xl uppercase hover:text-sage-dark transition-colors font-medium">Account</a>
+        <div class="w-12 h-[1px] bg-sage-dark my-4"></div>
+        <a href="https://opificiocalabria.com/" class="mobile-link text-sm tracking-widest-xl uppercase text-sage-dark font-bold">Sito Ufficiale</a>
+    </div>
 </header>
 
-<main class="flex-grow">
+<main class="flex-grow pt-16 md:pt-0">
     <!-- Hero Section -->
-    <section class="relative w-full h-screen flex items-center justify-center text-center overflow-hidden">
+    <section class="relative w-full h-[85vh] md:h-screen flex items-center justify-center text-center overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center scale-105 transform hover:scale-110 transition-transform duration-[10000ms] ease-out" 
              style="background-image: url('https://lh3.googleusercontent.com/aida/ADBb0ug2jXAIajfMnwnTg5lfRN3LsVzYbYLQ19OZzCP2O0tcIeBdxvOfh6gf_bYCCgx1_W_cBDFjkKAdMRa-5bdyEAV1G7CbeYIyx62cYhDiBU8u8u6FfGTs2OSe7pXLiIBWodTaPROEU9gJuTNYRKtYGO7oHUYr9lzfmTNMEsC8j1ynI-2ItIqlYFiwIqwADhmkEMA_4gn5Mwzu5ZV-J-mHZ2HqtU3xbvUZWt0k4SThm6B7ozl4m3Q9Lca5pLBw8m6-vRH6gqkZ8k-oqD0');">
         </div>
         <div class="absolute inset-0 bg-charcoal-dark/40"></div>
-        <div class="relative z-10 px-6 flex flex-col items-center gap-6 mt-16 max-w-5xl mx-auto">
-            <p class="font-accent text-5xl md:text-7xl lg:text-8xl text-white text-shadow-sm mb-0 opacity-90 transform translate-y-6">
+        <div class="relative z-10 px-4 md:px-6 flex flex-col items-center gap-4 md:gap-6 max-w-5xl mx-auto">
+            <p class="font-accent text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white text-shadow-sm mb-0 opacity-90 transform translate-y-4 md:translate-y-6">
                 La natura a tavola
             </p>
-            <h2 class="font-heading text-4xl md:text-7xl lg:text-[6rem] text-white uppercase tracking-widest leading-none drop-shadow-lg">
+            <h2 class="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] text-white uppercase tracking-widest leading-tight md:leading-none drop-shadow-lg px-2">
                 OPIFICIO CALABRIA
             </h2>
-            <p class="font-body text-sm md:text-lg text-white/90 max-w-2xl font-light tracking-widest-xl uppercase mt-6 drop-shadow-md">
+            <p class="font-body text-xs sm:text-sm md:text-lg text-white/90 max-w-2xl font-light tracking-[0.15em] md:tracking-widest-xl uppercase mt-4 md:mt-6 drop-shadow-md">
                 Tradizione secolare e visione moderna
             </p>
-            <a href="https://opificiocalabria.com/chi-siamo/" class="inline-block mt-12 border border-white text-white font-body py-4 px-10 uppercase tracking-widest-xl hover:bg-white hover:text-charcoal transition-all duration-500 text-xs font-semibold">
+            <a href="https://opificiocalabria.com/chi-siamo/" class="inline-block mt-8 md:mt-12 border border-white text-white font-body py-3 px-8 md:py-4 md:px-10 uppercase tracking-widest md:tracking-widest-xl hover:bg-white hover:text-charcoal transition-all duration-500 text-[10px] md:text-xs font-semibold">
                 Scopri la Nostra Storia
             </a>
         </div>
     </section>
 
     <!-- Pull Quote Section -->
-    <section class="px-6 py-32 md:py-48 bg-page-bg text-center flex justify-center">
+    <section class="px-6 py-20 md:py-48 bg-page-bg text-center flex justify-center">
         <div class="max-w-4xl relative">
-            <span class="material-symbols-outlined text-sage-green text-6xl md:text-8xl absolute -top-16 md:-top-24 left-1/2 -translate-x-1/2 opacity-30">format_quote</span>
-            <blockquote class="font-heading text-2xl md:text-4xl text-charcoal uppercase tracking-widest-xl leading-relaxed mb-12 relative z-10">
+            <span class="material-symbols-outlined text-sage-green text-5xl md:text-8xl absolute -top-10 md:-top-24 left-1/2 -translate-x-1/2 opacity-30">format_quote</span>
+            <blockquote class="font-heading text-xl md:text-4xl text-charcoal uppercase tracking-widest md:tracking-widest-xl leading-relaxed md:leading-loose mb-8 md:mb-12 relative z-10">
                 Il lusso, per noi, è la verità delle cose fatte con il cuore. Grazie per essere parte della nostra storia. Buona degustazione.
             </blockquote>
-            <p class="font-body text-xs text-sage-dark uppercase tracking-widest-2xl font-semibold">
+            <p class="font-body text-[10px] md:text-xs text-sage-dark uppercase tracking-widest-xl md:tracking-widest-2xl font-semibold">
                 — La Famiglia Opificio
             </p>
         </div>
@@ -123,57 +133,57 @@ tailwind.config = {
 
     <!-- Cinematic Image Section -->
     <section class="w-full">
-        <div class="w-full h-[50vh] md:h-[80vh] overflow-hidden group cursor-pointer relative">
+        <div class="w-full h-[40vh] md:h-[80vh] overflow-hidden group cursor-pointer relative">
             <img alt="Buona degustazione - Crostata e marmellata" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105" 
                  src="https://lh3.googleusercontent.com/aida/ADBb0uhDKpk_dKihJOnVGulcuBzCdSSf8w78PMHYQyoti4LMsy41eoimHxzOXglHHz7Q6r_BjYBYxU7tWLn8b_sKIV4jd8TjmtIBI2GuJYkhhFGikH3vwe7jHU8kT_GR5dARfwOadsbgEsHj48ZRp_j5bMWsS1A5orQQKJLqfIvvZEvlLZQdw48yu4UmUGE918GNKb-3wqdSuYpVNxVIzdhePOErI77AFS666Mfe78eVP3aDG58mrT9UvXNSF4zEZ8UYtaZgDM29nGN9Qg"/>
         </div>
     </section>
 
     <!-- Split Content Section 01 -->
-    <section class="max-w-7xl mx-auto px-6 py-32 md:py-40 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-        <div class="order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left gap-10">
-            <h3 class="font-heading text-4xl md:text-5xl text-charcoal uppercase tracking-widest leading-tight">
+    <section class="max-w-7xl mx-auto px-6 py-20 md:py-40 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+        <div class="order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left gap-6 md:gap-10">
+            <h3 class="font-heading text-3xl md:text-5xl text-charcoal uppercase tracking-widest leading-tight">
                 I sapori della<br>nostra terra
             </h3>
-            <div class="w-16 h-[1px] bg-sage-dark"></div>
-            <p class="font-body text-base text-charcoal/70 leading-loose font-light">
+            <div class="w-12 md:w-16 h-[1px] bg-sage-dark"></div>
+            <p class="font-body text-sm md:text-base text-charcoal/70 leading-loose font-light">
                 Un viaggio sensoriale guidato dallo chef Max Mariola, alla scoperta delle eccellenze calabresi come il pregiato cedro e l'inconfondibile fico dottato.
                 Ogni frutto racconta la storia di un territorio ricco, aspro e generoso.
             </p>
-            <button class="bg-sage-dark text-white font-body py-4 px-10 uppercase tracking-widest-xl hover:bg-charcoal transition-colors duration-500 text-xs font-semibold mt-4">
+            <button class="bg-sage-dark text-white font-body py-3 px-8 md:py-4 md:px-10 uppercase tracking-widest hover:bg-charcoal transition-colors duration-500 text-[10px] md:text-xs font-semibold mt-2 md:mt-4">
                 Scopri le ricette
             </button>
         </div>
-        <div class="order-1 md:order-2 h-[60vh] md:h-[90vh] w-full overflow-hidden shadow-2xl relative">
+        <div class="order-1 md:order-2 h-[45vh] md:h-[90vh] w-full overflow-hidden shadow-2xl relative">
             <img alt="Chef Max Mariola" class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-[1500ms]" 
                  src="https://lh3.googleusercontent.com/aida/ADBb0uhcToXrv9oq_3ETC2si4XnpU-mQt0lbFR4UTUPvfNnAhYSFJGzMOUH5GuvrUeiy4OTaMpLgmmRWgtIVGHhE4W7iqOXRXKtBVG5TNZbfqtMuMGM0qQfDqfWwh7-JZaErUw06vjhQfRM1nJA-qo4zLuxT9IXeDe9v1yWaaFkYoJi33bJjAOu66nUwKvkXezbijyeQ4Uj2rA8ZfmBagcluZYq4dg8KBWB73szBXEbNmXim6iBepUf_eEDeMKOCUdvCsil5ZLGNPphglGM"/>
         </div>
     </section>
 
     <!-- Pre-Order VIP Banner -->
-    <section class="w-full bg-charcoal-dark text-white py-32 px-6 text-center relative overflow-hidden">
+    <section class="w-full bg-charcoal-dark text-white py-20 md:py-32 px-4 text-center relative overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-sage-green pointer-events-none"></div>
-        <div class="max-w-3xl mx-auto flex flex-col items-center gap-10 relative z-10">
-            <p class="font-accent text-5xl text-sage-green mb-[-1.5rem]">Esclusività</p>
-            <h3 class="font-heading text-4xl md:text-5xl uppercase tracking-widest">
+        <div class="max-w-3xl mx-auto flex flex-col items-center gap-6 md:gap-10 relative z-10">
+            <p class="font-accent text-4xl md:text-5xl text-sage-green mb-[-1rem] md:mb-[-1.5rem]">Esclusività</p>
+            <h3 class="font-heading text-3xl md:text-5xl uppercase tracking-widest">
                 Pre-Order VIP
             </h3>
-            <p class="font-body text-base text-white/70 max-w-xl font-light leading-loose">
+            <p class="font-body text-sm md:text-base text-white/70 max-w-xl font-light leading-relaxed md:leading-loose">
                 Accedi in anteprima alla nostra collezione esclusiva e riservata. 
                 Utilizza il codice segreto per sbloccare la selezione limitata per i nostri clienti più affezionati.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-6 mt-8 w-full justify-center">
-                <div class="bg-charcoal border border-white/10 px-8 py-4 flex items-center justify-between min-w-[280px]">
+            <div class="flex flex-col sm:flex-row gap-4 md:gap-6 mt-4 md:mt-8 w-full justify-center px-4">
+                <div class="bg-charcoal border border-white/10 px-6 md:px-8 py-3 md:py-4 flex items-center justify-between min-w-full sm:min-w-[280px]">
                     <div class="flex items-center gap-4">
                         <div class="w-2 h-2 bg-sage-green rounded-full animate-pulse shadow-[0_0_8px_rgba(187,203,194,0.8)]"></div>
-                        <span class="font-body text-sm tracking-widest-xl text-white">OPC-VIP</span>
+                        <span class="font-body text-xs md:text-sm tracking-widest-xl text-white">OPC-VIP</span>
                     </div>
                     <button aria-label="Copy VIP Code" class="text-white/40 hover:text-sage-green transition-colors">
-                        <span class="material-symbols-outlined text-xl">content_copy</span>
+                        <span class="material-symbols-outlined text-lg md:text-xl">content_copy</span>
                     </button>
                 </div>
-                <button class="bg-sage-green text-charcoal font-body py-4 px-10 uppercase tracking-widest-xl hover:bg-white transition-colors duration-500 text-xs font-semibold">
+                <button class="bg-sage-green text-charcoal font-body py-3 px-8 md:py-4 md:px-10 uppercase tracking-widest hover:bg-white transition-colors duration-500 text-[10px] md:text-xs font-semibold w-full sm:w-auto">
                     Attiva Codice
                 </button>
             </div>
@@ -181,54 +191,54 @@ tailwind.config = {
     </section>
 
     <!-- Split Content Section 02 (Form & Adotta un Albero) -->
-    <section class="max-w-7xl mx-auto px-6 py-32 md:py-40 grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+    <section class="max-w-7xl mx-auto px-6 py-20 md:py-40 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-start">
         
         <!-- Experience Form -->
-        <div class="flex flex-col gap-10 bg-white p-12 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.05)] relative border border-charcoal/5">
+        <div class="flex flex-col gap-8 md:gap-10 bg-white p-8 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.05)] relative border border-charcoal/5 w-full">
             <div class="absolute top-0 left-0 w-full h-1 bg-sage-dark"></div>
-            <h3 class="font-heading text-3xl md:text-4xl text-charcoal uppercase tracking-widest leading-tight">
-                Esperienza in<br>Opificio
+            <h3 class="font-heading text-2xl md:text-4xl text-charcoal uppercase tracking-widest leading-tight text-center md:text-left">
+                Esperienza in<br class="hidden md:block"> Opificio
             </h3>
-            <p class="font-body text-charcoal/60 font-light leading-loose text-sm">
-                Invia la tua candidatura per vivere un'esperienza immersiva nel cuore della nostra produzione. Un tour esclusivo tra i campi e le cantine, riservato a pochi ospiti.
+            <p class="font-body text-charcoal/60 font-light leading-relaxed md:leading-loose text-xs md:text-sm text-center md:text-left">
+                Invia la tua candidatura per vivere un'esperienza immersiva nel cuore della nostra produzione. Un tour esclusivo tra i campi e le cantine.
             </p>
-            <form class="flex flex-col gap-10 mt-6">
+            <form class="flex flex-col gap-8 md:gap-10 mt-2 md:mt-6">
                 <div class="relative w-full">
-                    <input class="peer w-full border-0 border-b border-charcoal/20 bg-transparent px-0 py-3 text-charcoal focus:border-sage-dark focus:ring-0 transition-colors font-body text-base placeholder-transparent" id="name" placeholder="Nome Completo" type="text"/>
-                    <label class="absolute left-0 -top-5 font-body text-[10px] text-charcoal/50 uppercase tracking-widest transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-5 peer-focus:text-[10px] peer-focus:text-sage-dark" for="name">
+                    <input class="peer w-full border-0 border-b border-charcoal/20 bg-transparent px-0 py-2 md:py-3 text-charcoal focus:border-sage-dark focus:ring-0 transition-colors font-body text-sm md:text-base placeholder-transparent" id="name" placeholder="Nome Completo" type="text"/>
+                    <label class="absolute left-0 -top-5 font-body text-[10px] text-charcoal/50 uppercase tracking-widest transition-all peer-placeholder-shown:text-xs md:peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 md:peer-placeholder-shown:top-3 peer-focus:-top-5 peer-focus:text-[10px] peer-focus:text-sage-dark" for="name">
                         Nome Completo
                     </label>
                 </div>
                 <div class="relative w-full">
-                    <input class="peer w-full border-0 border-b border-charcoal/20 bg-transparent px-0 py-3 text-charcoal focus:border-sage-dark focus:ring-0 transition-colors font-body text-base placeholder-transparent" id="email" placeholder="Indirizzo Email" type="email"/>
-                    <label class="absolute left-0 -top-5 font-body text-[10px] text-charcoal/50 uppercase tracking-widest transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-5 peer-focus:text-[10px] peer-focus:text-sage-dark" for="email">
+                    <input class="peer w-full border-0 border-b border-charcoal/20 bg-transparent px-0 py-2 md:py-3 text-charcoal focus:border-sage-dark focus:ring-0 transition-colors font-body text-sm md:text-base placeholder-transparent" id="email" placeholder="Indirizzo Email" type="email"/>
+                    <label class="absolute left-0 -top-5 font-body text-[10px] text-charcoal/50 uppercase tracking-widest transition-all peer-placeholder-shown:text-xs md:peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 md:peer-placeholder-shown:top-3 peer-focus:-top-5 peer-focus:text-[10px] peer-focus:text-sage-dark" for="email">
                         Indirizzo Email
                     </label>
                 </div>
                 <div class="relative w-full">
-                    <input class="peer w-full border-0 border-b border-charcoal/20 bg-transparent px-0 py-3 text-charcoal focus:border-sage-dark focus:ring-0 transition-colors font-body text-base placeholder-transparent" id="city" placeholder="Città" type="text"/>
-                    <label class="absolute left-0 -top-5 font-body text-[10px] text-charcoal/50 uppercase tracking-widest transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-5 peer-focus:text-[10px] peer-focus:text-sage-dark" for="city">
+                    <input class="peer w-full border-0 border-b border-charcoal/20 bg-transparent px-0 py-2 md:py-3 text-charcoal focus:border-sage-dark focus:ring-0 transition-colors font-body text-sm md:text-base placeholder-transparent" id="city" placeholder="Città" type="text"/>
+                    <label class="absolute left-0 -top-5 font-body text-[10px] text-charcoal/50 uppercase tracking-widest transition-all peer-placeholder-shown:text-xs md:peer-placeholder-shown:text-sm peer-placeholder-shown:top-2 md:peer-placeholder-shown:top-3 peer-focus:-top-5 peer-focus:text-[10px] peer-focus:text-sage-dark" for="city">
                         Città
                     </label>
                 </div>
-                <button class="bg-charcoal text-white font-body py-5 px-8 uppercase tracking-widest-xl hover:bg-sage-dark transition-colors duration-500 text-xs font-semibold mt-4 w-full" type="submit">
+                <button class="bg-charcoal text-white font-body py-4 md:py-5 px-8 uppercase tracking-widest hover:bg-sage-dark transition-colors duration-500 text-[10px] md:text-xs font-semibold mt-4 w-full" type="submit">
                     Invia Candidatura
                 </button>
             </form>
         </div>
 
         <!-- Adotta un albero -->
-        <div class="flex flex-col items-center md:items-start text-center md:text-left gap-10 mt-12 md:mt-0 lg:pl-10">
-            <div class="w-full h-[50vh] overflow-hidden shadow-2xl relative">
+        <div class="flex flex-col items-center md:items-start text-center md:text-left gap-6 md:gap-10 lg:pl-10">
+            <div class="w-full h-[40vh] md:h-[50vh] overflow-hidden shadow-2xl relative">
                 <img alt="Fig trees orchard in Calabria" class="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-[1500ms]" src="https://lh3.googleusercontent.com/aida/ADBb0ughSy99vEhdVzRZYlzH_1fJMcoPKtal7GWt2fcIyl6LhWkpgSmCVMOkmUfucqnX2L4ZfTomN1xIae7BSC-Q-DpPX5OAJyTm6hhKtk94m14DeSCeKWj_CsTa6AitSxjLyrt1alT0p-Det9XXBU7JzfbrZSO_yk-XegwST4QfcC4w8dsjRQMD4-8k7PDLFnZsbqNziVAGOhoy9cpjDByKboSAwYSaQTSfhCf3Z0Z20Q3im7B5dwvFnK6f6jJo5zUYF3-syGdpPoWeLDU"/>
             </div>
-            <h3 class="font-heading text-4xl md:text-5xl text-charcoal uppercase tracking-widest mt-4">
+            <h3 class="font-heading text-3xl md:text-5xl text-charcoal uppercase tracking-widest mt-2 md:mt-4">
                 Adotta un Albero
             </h3>
-            <p class="font-body text-base text-charcoal/70 leading-loose font-light">
+            <p class="font-body text-sm md:text-base text-charcoal/70 leading-loose font-light px-2 md:px-0">
                 Scegliere di adottare un albero significa abbracciare la nostra filosofia agricola. Riceverai i frutti stagionali direttamente a casa tua, supportando una coltivazione sostenibile e profondamente legata al territorio.
             </p>
-            <button class="border border-charcoal text-charcoal font-body py-4 px-10 uppercase tracking-widest-xl hover:bg-charcoal hover:text-white transition-all duration-500 text-xs font-semibold mt-4">
+            <button class="border border-charcoal text-charcoal font-body py-3 md:py-4 px-8 md:px-10 uppercase tracking-widest md:tracking-widest-xl hover:bg-charcoal hover:text-white transition-all duration-500 text-[10px] md:text-xs font-semibold mt-2 md:mt-4">
                 Scopri il progetto
             </button>
         </div>
@@ -238,12 +248,12 @@ tailwind.config = {
 </main>
 
 <!-- Footer -->
-<footer class="w-full bg-charcoal-dark text-white pt-32 pb-16 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-8 mb-20">
+<footer class="w-full bg-charcoal-dark text-white pt-20 md:pt-32 pb-10 md:pb-16 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-16 md:mb-20">
         <!-- Brand Col -->
-        <div class="col-span-1 md:col-span-4 flex flex-col items-center md:items-start gap-8 text-center md:text-left">
-            <h2 class="font-heading text-2xl tracking-widest-xl uppercase text-white">Opificio Calabria</h2>
-            <p class="font-body text-sm text-white/50 font-light max-w-sm leading-loose">
+        <div class="col-span-1 md:col-span-4 flex flex-col items-center md:items-start gap-6 md:gap-8 text-center md:text-left">
+            <h2 class="font-heading text-xl md:text-2xl tracking-widest-xl uppercase text-white">Opificio Calabria</h2>
+            <p class="font-body text-xs md:text-sm text-white/50 font-light max-w-sm leading-loose">
                 Custodiamo l'autenticità dei frutti calabresi. Un lusso sostenibile e profondamente legato alla nostra terra, coltivato con passione da generazioni.
             </p>
         </div>
@@ -252,33 +262,33 @@ tailwind.config = {
         <div class="hidden md:block md:col-span-2"></div>
 
         <!-- Links Col -->
-        <div class="col-span-1 md:col-span-3 flex flex-col items-center md:items-start gap-5 text-center md:text-left">
-            <h4 class="font-body text-[10px] text-white/40 tracking-widest-2xl uppercase mb-4">Esplora</h4>
-            <a href="https://opificiocalabria.com/shop/" class="font-body text-xs text-white hover:text-sage-green tracking-widest uppercase transition-colors">Shop Online</a>
-            <a href="https://opificiocalabria.com/filosofia/" class="font-body text-xs text-white hover:text-sage-green tracking-widest uppercase transition-colors">La Filosofia</a>
-            <a href="https://opificiocalabria.com/frutti-pregiati/" class="font-body text-xs text-white hover:text-sage-green tracking-widest uppercase transition-colors">I Frutti Pregiati</a>
-            <a href="https://opificiocalabria.com/chi-siamo/" class="font-body text-xs text-white hover:text-sage-green tracking-widest uppercase transition-colors">Chi Siamo</a>
+        <div class="col-span-1 md:col-span-3 flex flex-col items-center md:items-start gap-4 md:gap-5 text-center md:text-left">
+            <h4 class="font-body text-[10px] text-white/40 tracking-widest-2xl uppercase mb-2 md:mb-4">Esplora</h4>
+            <a href="https://opificiocalabria.com/shop/" class="font-body text-[10px] md:text-xs text-white hover:text-sage-green tracking-widest uppercase transition-colors">Shop Online</a>
+            <a href="https://opificiocalabria.com/filosofia/" class="font-body text-[10px] md:text-xs text-white hover:text-sage-green tracking-widest uppercase transition-colors">La Filosofia</a>
+            <a href="https://opificiocalabria.com/frutti-pregiati/" class="font-body text-[10px] md:text-xs text-white hover:text-sage-green tracking-widest uppercase transition-colors">I Frutti Pregiati</a>
+            <a href="https://opificiocalabria.com/chi-siamo/" class="font-body text-[10px] md:text-xs text-white hover:text-sage-green tracking-widest uppercase transition-colors">Chi Siamo</a>
         </div>
 
         <!-- Utility Col -->
-        <div class="col-span-1 md:col-span-3 flex flex-col items-center md:items-start gap-5 text-center md:text-left">
-            <h4 class="font-body text-[10px] text-white/40 tracking-widest-2xl uppercase mb-4">Supporto</h4>
-            <a href="https://opificiocalabria.com/contatti/" class="font-body text-xs text-white hover:text-sage-green tracking-widest uppercase transition-colors">Contatti</a>
-            <a href="https://www.iubenda.com/privacy-policy/82359267" class="font-body text-xs text-white hover:text-sage-green tracking-widest uppercase transition-colors" target="_blank">Privacy Policy</a>
-            <a href="https://opificiocalabria.com/termini-e-condizioni/" class="font-body text-xs text-white hover:text-sage-green tracking-widest uppercase transition-colors">Termini e Condizioni</a>
+        <div class="col-span-1 md:col-span-3 flex flex-col items-center md:items-start gap-4 md:gap-5 text-center md:text-left">
+            <h4 class="font-body text-[10px] text-white/40 tracking-widest-2xl uppercase mb-2 md:mb-4">Supporto</h4>
+            <a href="https://opificiocalabria.com/contatti/" class="font-body text-[10px] md:text-xs text-white hover:text-sage-green tracking-widest uppercase transition-colors">Contatti</a>
+            <a href="https://www.iubenda.com/privacy-policy/82359267" class="font-body text-[10px] md:text-xs text-white hover:text-sage-green tracking-widest uppercase transition-colors" target="_blank">Privacy Policy</a>
+            <a href="https://opificiocalabria.com/termini-e-condizioni/" class="font-body text-[10px] md:text-xs text-white hover:text-sage-green tracking-widest uppercase transition-colors">Termini e Condizioni</a>
         </div>
     </div>
     
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center pt-10 border-t border-white/10 gap-6 text-center md:text-left">
-        <p class="font-body text-[10px] tracking-widest uppercase text-white/30">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center pt-8 md:pt-10 border-t border-white/10 gap-6 text-center md:text-left">
+        <p class="font-body text-[8px] md:text-[10px] tracking-widest uppercase text-white/30">
             © 2024 OPIFICIO CALABRIA. TUTTI I DIRITTI RISERVATI.
         </p>
-        <div class="flex gap-8">
+        <div class="flex gap-6 md:gap-8">
             <a href="#" class="text-white/30 hover:text-sage-green transition-colors">
-                <span class="font-body text-[10px] tracking-widest uppercase">Instagram</span>
+                <span class="font-body text-[8px] md:text-[10px] tracking-widest uppercase">Instagram</span>
             </a>
             <a href="#" class="text-white/30 hover:text-sage-green transition-colors">
-                <span class="font-body text-[10px] tracking-widest uppercase">Facebook</span>
+                <span class="font-body text-[8px] md:text-[10px] tracking-widest uppercase">Facebook</span>
             </a>
         </div>
     </div>
@@ -293,6 +303,34 @@ tailwind.config = {
         } else {
             header.classList.remove('shadow-sm');
         }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = mobileMenuBtn.querySelector('span');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    function toggleMenu() {
+        const isOpen = mobileMenu.classList.contains('translate-y-0');
+        if (isOpen) {
+            mobileMenu.classList.remove('translate-y-0');
+            mobileMenu.classList.add('-translate-y-full');
+            menuIcon.textContent = 'menu';
+            document.body.style.overflow = '';
+        } else {
+            mobileMenu.classList.remove('-translate-y-full');
+            mobileMenu.classList.add('translate-y-0');
+            menuIcon.textContent = 'close';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    mobileMenuBtn.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking a link
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
     });
 </script>
 </body>
