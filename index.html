@@ -60,27 +60,29 @@ tailwind.config = {
         </nav>
 
         <!-- Logo -->
-        <div class="text-center flex-none absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
+        <div class="text-center flex-none absolute left-1/2 -translate-x-1/2">
             <a href="https://opificiocalabria.com/" class="font-heading text-xl md:text-3xl text-charcoal tracking-widest-2xl uppercase whitespace-nowrap hover:text-sage-dark transition-colors">
                 Opificio Calabria
             </a>
         </div>
 
-        <!-- Desktop Nav Right -->
-        <nav class="hidden md:flex gap-8 items-center flex-1 justify-end">
-            <a href="https://opificiocalabria.com/shop/" class="text-xs tracking-widest-xl uppercase hover:text-sage-dark transition-colors font-medium">Shop</a>
-            <a href="https://opificiocalabria.com/" class="text-xs tracking-widest-xl uppercase text-sage-dark hover:text-charcoal transition-colors font-bold">Sito Ufficiale</a>
-        </nav>
+        <!-- Desktop Nav Right & Icons -->
+        <div class="flex items-center flex-1 justify-end gap-6 md:gap-8">
+            <nav class="hidden md:flex gap-8 items-center">
+                <a href="https://opificiocalabria.com/shop/" class="text-xs tracking-widest-xl uppercase hover:text-sage-dark transition-colors font-medium">Shop</a>
+                <a href="https://opificiocalabria.com/" class="text-xs tracking-widest-xl uppercase text-sage-dark hover:text-charcoal transition-colors font-bold">Sito Ufficiale</a>
+            </nav>
 
-        <!-- Cart/Account Icons -->
-        <div class="flex gap-3 md:gap-4 items-center flex-1 justify-end md:ml-8">
-            <a href="https://opificiocalabria.com/my-account/" class="hidden md:block text-charcoal hover:text-sage-green transition-colors duration-300">
-                <span class="material-symbols-outlined text-2xl">person</span>
-            </a>
-            <a href="https://opificiocalabria.com/cart/" class="text-charcoal hover:text-sage-green transition-colors duration-300 relative inline-block p-1">
-                <span class="material-symbols-outlined text-2xl md:text-2xl">shopping_bag</span>
-                <span class="absolute top-0 right-0 bg-sage-dark text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
-            </a>
+            <!-- Cart/Account Icons -->
+            <div class="flex gap-3 md:gap-4 items-center">
+                <a href="https://opificiocalabria.com/my-account/" class="hidden md:block text-charcoal hover:text-sage-green transition-colors duration-300">
+                    <span class="material-symbols-outlined text-2xl">person</span>
+                </a>
+                <a href="https://opificiocalabria.com/cart/" class="text-charcoal hover:text-sage-green transition-colors duration-300 relative inline-block p-1">
+                    <span class="material-symbols-outlined text-2xl md:text-2xl">shopping_bag</span>
+                    <span class="absolute top-0 right-0 bg-sage-dark text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </a>
+            </div>
         </div>
     </div>
 
